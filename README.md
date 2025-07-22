@@ -60,7 +60,7 @@ Data science project that seeks to make a sales forecasting model to predict fut
 - More than 75% of sales have a value of less than 210 dollars, with the highest value being more than 22 thousand.
 - The sales tend to be the highest in November and the lowest in February.
 - The consumer segment is by far the greatest contributor to sales.
-- The SARIMAX model has been found to be the best model and produces fairly accurate forecasts. It should be used as an indicator for future sales, but not as a predictor. 
+- The SARIMAX model has been found to be the best model with a MAPE at about 16%, producing fairly accurate forecasts.
 
 ## Improvements
 - Other statistical models such as quantile regression or bayesian structural time series could be used, which may be better at handling the skewness and outliers present in the sales data.
