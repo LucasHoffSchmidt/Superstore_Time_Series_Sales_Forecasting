@@ -27,7 +27,6 @@ Data science project that seeks to make a sales forecasting model to predict fut
 **Data Collection**
 - Acquired the superstore sales dataset from kaggle, renamed the dataset folder and converted the dataset to a pandas DataFrame.
 <img src="images/dataframe.jpg" alt="DataFrame" width="800">
-
 - Defined the attributes of the dataset. <br><br>
 
 **Exploratory Data Analysis**
@@ -56,7 +55,7 @@ Data science project that seeks to make a sales forecasting model to predict fut
 <img src="images/arimax.jpg" alt="ARIMAX forecast" width="700">
 <img src="images/sarimax.jpg" alt="SARIMAX forecast" width="700">
 <img src="images/holt-winters.jpg" alt="Holt-Winters forecast" width="700">
-- Evaluated each model on evaluation metrics such as mean absolute percentage error. 
+- Evaluated each model on evaluation metrics such as mean absolute percentage error. <br><br>
 
 **Model Interpretation**
 - Acquired the residuals from the best-performing model's forecast vs the actual historical sales values.
@@ -64,18 +63,18 @@ Data science project that seeks to make a sales forecasting model to predict fut
 - Visualized the best-performing model's forecast with a 95% confidence interval for the past 6 months.
 <img src="images/sarimax_confidence.jpg" alt="SARIMAX forecast with confidence intervals" width="700">
 - Compared the cumulative forecasted sales against the cumulative actual sales.
-<img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700">
+<img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700"><br>
 
 **Model Deployment**
 - Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with dynamic visualizations and interactive forecast visualizations, including the residuals of the forecasted sales and the percentage errors compared to the actual sales. 
-- Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.
+- Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.<br><br>
 
 
 ## Insights
 - More than 75% of sales have a value of less than 210 dollars, with the highest value being more than 22 thousand.
 - The sales tend to be the highest in November and the lowest in February.
 - The consumer segment is by far the greatest contributor to sales.
-- The SARIMAX model has been found to be the best model with a MAPE at about 16%, producing fairly accurate forecasts.
+- The SARIMAX model has been found to be the best model with a MAPE at about 16%, producing fairly accurate forecasts.<br><br>
 
 ## Improvements
 - Other statistical models such as quantile regression or bayesian structural time series could be used, which may be better at handling the skewness and outliers present in the sales data.
