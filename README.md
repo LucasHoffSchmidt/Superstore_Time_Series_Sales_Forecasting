@@ -26,35 +26,50 @@ Data science project that seeks to make a sales forecasting model to predict fut
 ## Process
 **Data Collection**
 - Acquired the superstore sales dataset from kaggle, renamed the dataset folder and converted the dataset to a pandas DataFrame.
-- Defined the attributes of the dataset. 
+<img src="images/dataframe.jpg" alt="DataFrame" width="800">
+
+- Defined the attributes of the dataset. <br><br>
 
 **Exploratory Data Analysis**
 - Checked the dataframe for null values and incorrect data types and converted the date features Order Date and Ship Date to datetime format.
 - Investigated the statistical distribution of attributes and created a histogram and boxplot of sales to check for skewness and outliers.
+<img src="images/histogram.jpg" alt="Histogram of sales" width="700">
+<img src="images/boxplot.jpg" alt="Boxplot of sales" width="700">
 - Created new datetime features such as month and year and used them in lineplots to see how total sales fluctuate over time.
+<img src="images/months_elapsed.jpg" alt="Total sales by months elapsed" width="700">
 - Visualized how categorical features such as segment and region relate to total sales using barplots.
-- Created an interactive map of total sales by state.  
+<img src="images/total_sales_region.jpg" alt="Total sales by segment and region" width="700">
+<img src="images/total_sales_category.jpg" alt="Total sales by category and subcategory" width="700">
+- Created an interactive map of total sales by state.
+<img src="images/states_map.jpg" alt="Total sales by state" width="700"><br>
 
 **Data Preprocessing**
 - Checked the dataframe for duplicates, invalid names and extra spaces.
-- Dropped any feature that is not suitable for modeling, such as high cardinality features and features that are unknown at the time of forecasting. 
+- Dropped any feature that is not suitable for modeling, such as high cardinality features and features that are unknown at the time of forecasting. <br><br>
 
 **Model Training and Evaluation**
 - Checked collinearity between features used for modeling.
+<img src="images/heatmap_time.jpg" alt="Heatmap of timebased features" width="550">
 - Prepared data for statistical modeling by adjusting for the skewness and outliers of sales by using winsorization and the logarithm of sales.
 - Aggregated features by month and split data into training and testing dataframes.
-- Created forecasts for the past 6 months and compared this with historical sales data with and without exogenous variables, using statistical models such as SARIMA.
+- Created forecasts for the past 6 months with and without exogenous variables using ARIMA, SARIMA and Holt-Winters.
+<img src="images/arimax.jpg" alt="ARIMAX forecast" width="700">
+<img src="images/sarimax.jpg" alt="SARIMAX forecast" width="700">
+<img src="images/holt-winters.jpg" alt="Holt-Winters forecast" width="700">
 - Evaluated each model on evaluation metrics such as mean absolute percentage error. 
 
 **Model Interpretation**
 - Acquired the residuals from the best-performing model's forecast vs the actual historical sales values.
+<img src="images/sarimax_residuals.jpg" alt="Residuals from SARIMAX model" width="600">
 - Visualized the best-performing model's forecast with a 95% confidence interval for the past 6 months.
-- Compared the cumulative forecasted sales against the cumulative actual sales. 
+<img src="images/sarimax_confidence.jpg" alt="SARIMAX forecast with confidence intervals" width="700">
+- Compared the cumulative forecasted sales against the cumulative actual sales.
+<img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700">
 
 **Model Deployment**
-- Saved data for use in the streamlit app.
-- Generated freezed package versions of dependent packages for the streamlit app, to avoid intercompatibility errors.
-- Developed a streamlit app with dynamic visualizations and interactive forecast visualizations, including the residuals of the forecasted sales and the percentage errors compared to the actual sales. 
+- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with dynamic visualizations and interactive forecast visualizations, including the residuals of the forecasted sales and the percentage errors compared to the actual sales. 
+- Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.
+
 
 ## Insights
 - More than 75% of sales have a value of less than 210 dollars, with the highest value being more than 22 thousand.
