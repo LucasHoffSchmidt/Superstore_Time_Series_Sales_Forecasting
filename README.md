@@ -66,9 +66,8 @@ Data science project that seeks to make a sales forecasting model to predict fut
 <img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700"><br>
 
 **Model Deployment**
-- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with dynamic visualizations and interactive forecast visualizations, including the residuals of the forecasted sales and the percentage errors compared to the actual sales. 
+- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with interactive total sales filtering and forecasting.
 - Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.<br><br>
-
 
 ## Insights
 - More than 75% of sales have a value of less than 210 dollars, with the highest value being more than 22 thousand.
