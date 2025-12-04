@@ -66,7 +66,7 @@ Data science project that seeks to make a sales forecasting model to predict fut
 <img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700"><br>
 
 **Model Deployment**
-- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with interactive total sales filtering and forecasting.
+- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with interactive sales filtering and forecasting.
 - Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.<br><br>
 
 ## Insights
