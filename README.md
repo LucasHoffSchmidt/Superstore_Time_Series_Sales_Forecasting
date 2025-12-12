@@ -1,5 +1,5 @@
 # Superstore Time Series Sales Forecasting
-Data science project that seeks to make a sales forecasting model to predict future sales for a global superstore to assist in optimizing pricing and marketing strategies. 
+Data science project that seeks to make a sales forecasting model to predict future sales for a global superstore to assist with inventory management. 
 
 ## Quick Links
 - Streamlit app for interactive data and model predictions analysis: [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/)
@@ -51,7 +51,7 @@ Data science project that seeks to make a sales forecasting model to predict fut
 <img src="images/heatmap_time.jpg" alt="Heatmap of timebased features" width="550">
 - Prepared data for statistical modeling by adjusting for the skewness and outliers of sales by using winsorization and the logarithm of sales.
 - Aggregated features by month and split data into training and testing dataframes.
-- Created forecasts for the past 6 months with and without exogenous variables using ARIMA, SARIMA and Holt-Winters.
+- Created forecasts for the last 12 months of sales data, with and without exogenous variables using ARIMA, SARIMA and Holt-Winters.
 <img src="images/arimax.jpg" alt="ARIMAX forecast" width="700">
 <img src="images/sarimax.jpg" alt="SARIMAX forecast" width="700">
 <img src="images/holt-winters.jpg" alt="Holt-Winters forecast" width="700">
@@ -60,22 +60,22 @@ Data science project that seeks to make a sales forecasting model to predict fut
 **Model Interpretation**
 - Acquired the residuals from the best-performing model's forecast vs the actual historical sales values.
 <img src="images/sarimax_residuals.jpg" alt="Residuals from SARIMAX model" width="600">
-- Visualized the best-performing model's forecast with a 95% confidence interval for the past 6 months.
+- Visualized the best-performing model's forecast with a 95% confidence interval for the last 12 months of the sales data.
 <img src="images/sarimax_confidence.jpg" alt="SARIMAX forecast with confidence intervals" width="700">
 - Compared the cumulative forecasted sales against the cumulative actual sales.
 <img src="images/cumulative.jpg" alt="Cumulative actual sales vs SARIMAX sales" width="700"><br>
 
 **Model Deployment**
-- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with interactive sales filtering and forecasting.
-- Saved sales data and generated freezed package versions of dependent packages for the streamlit app to avoid intercompatibility errors.<br><br>
+- Developed a [Streamlit App](https://superstore-time-series-sales-forecasting.streamlit.app/) with interactive sales filtering and forecasting with residuals and percentage errors.
+- Saved sales data and best performing model for the streamlit app.<br><br>
 
 ## Insights
-- More than 75% of sales have a value of less than 210 dollars, with the highest value being more than 22 thousand.
+- More than 75% of sales have a value of less than 210 dollars, while the highest value is greater than 22 thousand.
 - The sales tend to be the highest in November and the lowest in February.
 - The consumer segment is by far the greatest contributor to sales.
-- The SARIMAX model has been found to be the best model with a MAPE at about 16%, producing fairly accurate forecasts.<br><br>
+- The ARIMAX model has been found to be the best model with the best overall evaluation metrics, except for forecast bias with the model consistently underpredicting sales.<br><br>
 
 ## Improvements
-- Other statistical models such as quantile regression or bayesian structural time series could be used, which may be better at handling the skewness and outliers present in the sales data.
+- Other statistical models such as quantile regression or bayesian structural time series could be used, which may be better at handling the skewness and outliers present in the sales data, at the cost of greater computational costs.
 - Other techniques could also be employed to address the sales data's skewness and outliers such as robust scaling or box-cox transformation.
 - Acquiring more data such as holidays, where the sales seem to spike, could also be beneficial. 
